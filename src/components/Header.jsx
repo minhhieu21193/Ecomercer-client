@@ -31,7 +31,6 @@ function Header() {
   };
   return (
     <>
-      <Banner />
       <nav className="navbar navbar-light row mx-0 p-2 bg-light">
         <div className="px-0">
           <div className="mx-0 row col-12 d-flex align-items-center">
@@ -43,7 +42,7 @@ function Header() {
                 />
               </Link>
             </div>
-            <div className=" col-5 px-0 mx-0">
+            <div className=" col-4 col-md-6 px-0 mx-0">
               <div>
                 <form
                   className="d-flex my-lg-0 rounded-pill bg-transparent form-search-larger me-lg-2"
@@ -64,64 +63,7 @@ function Header() {
                 </form>
               </div>
             </div>
-            <div className="me-auto col-5 px-0 mx-0 d-flex justify-content-end">
-              <a
-                className="header-find-store px-0 col-lg-5 col-xl-4 d-flex justify-content-end align-items-center"
-                href="#"
-              >
-                Tìm
-                <span className="text-primary mx-1">205</span>cửa hàng
-              </a>
-              <a
-                className="header-hotline px-0 col-lg-3 col-xl-2 d-flex align-items-center mx-2"
-                href="tel:18002086"
-              >
-                <i className="fa-solid fa-phone"></i>
-                <span className="text-primary">1800 2086</span>
-              </a>
-            </div>
-          </div>
-          <div className="d-lg-flex d-none row col-lg-12 mb-lg-0">
-            <ul className="header-galery col-lg-8 col-xl-6 d-flex justify-content-evenly align-items-end ps-lg-0 mb-lg-0">
-              <li className="text-danger">SALE</li>
-              <li>
-                <a className="header-female" href="#">
-                  {" "}
-                  NỮ
-                </a>
-              </li>
-              <li>
-                <a className="header-male" href="#">
-                  NAM
-                </a>
-              </li>
-              <li>
-                <a className="header-children" href="#">
-                  TRẺ EM
-                </a>
-              </li>
-              <li>
-                <a className="header-polo" href="#">
-                  POLO DOLY
-                </a>
-              </li>
-              <li>
-                <a className="header-collection-clothes" href="#">
-                  BỘ SƯU TẬP
-                </a>
-              </li>
-              <li>
-                <a className="header-new" href="#">
-                  TIN TỨC
-                </a>
-              </li>
-              <li>
-                <a className="header-uniform" href="#">
-                  ĐỒNG PHỤC
-                </a>
-              </li>
-            </ul>
-            <div className="d-flex mb-lg-0 align-items-end justify-content-end ms-auto flex-nowrap px-0 col-lg-4 Login-Register">
+            <div className="d-flex mb-lg-0 align-items-center justify-content-end  flex-nowrap px-0 col-6 col-md-4 Login-Register pe-md-4 pe-2">
               {userInfo ? (
                 <div className="btn-group">
                   <button
@@ -148,16 +90,20 @@ function Header() {
                   </div>
                 </div>
               ) : (
-                <>
-                  <Link to="/register">Đăng kí</Link>
-                  <Link to="/login">Đăng nhập</Link>
-                </>
+                <div>
+                  <Link className="px-0 mx-1" to="/register">
+                    Đăng kí
+                  </Link>
+                  <Link className="px-0 mx-1" to="/login">
+                    Đăng nhập
+                  </Link>
+                </div>
               )}
               <Link
                 to="/cart"
-                className="btn d-flex align-items-end btn-bag mx-lg-4 p-lg-0"
+                className="btn d-flex align-items-end btn-bag mx-0 px-0 mx-lg-4 p-lg-0"
               >
-                Giỏ hàng
+                <span className="d-none d-lg-block">Giỏ hàng</span>
                 <ShoppingCartIcon />
                 <span className="badge-custom">{cartItems.length}</span>
               </Link>
@@ -168,14 +114,5 @@ function Header() {
     </>
   );
 }
-const Banner = styled.div`
-  width: 100%;
-  height: 48px;
-  background: url(//bizweb.sapocdn.net/100/438/408/themes/882066/assets/bannertop.jpg?1667298261334)
-    center center no-repeat;
-`;
-// const Logo = styled.div`
-//   width: 80px;
-//   height: 40px;
-// `;
+
 export default Header;

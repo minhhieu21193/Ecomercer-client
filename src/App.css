@@ -33,6 +33,7 @@ select:focus,
 textarea:focus {
   outline: 0px;
 }
+
 .row,
 .col-6,
 .col-4 {
@@ -82,12 +83,16 @@ textarea:focus {
   margin-right: 0rem;
 }
 .badge-custom {
-  background-color: #fcaf17;
+  background-color: rgba(252, 175, 23, 0.7);
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
   border-radius: 100px;
-  padding: 5px 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 12px;
 }
 .name-button {
